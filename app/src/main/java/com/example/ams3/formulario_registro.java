@@ -1,5 +1,6 @@
 package com.example.ams3;
 
+import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -37,7 +38,7 @@ protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanc
                     formulario_registro.class);
             notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             notificationIntent.putExtra("message", "This is a notification message");
-                    PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,notificationIntent,
+                    @SuppressLint("UnspecifiedImmutableFlag") PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,notificationIntent,
                             PendingIntent.FLAG_UPDATE_CURRENT);
             builder.setContentIntent(pendingIntent); NotificationManager manager =
                     (NotificationManager)
